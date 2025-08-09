@@ -1,0 +1,42 @@
+version: "3.8"
+
+services:
+  db:
+    image: postgres:14
+    container_name: serious-sql_db
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: serious_sql
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  sqlpad:
+    image: sqlpad/sqlpad:6
+    container_name: serious-sql_sqlpad
+    depends_on:
+      - db
+    ports:
+      - "3000:3000"
+    environment:
+      SQLPAD_ADMIN: admin@example.com
+      SQLPAD_ADMIN_PASSWORD: admin
+      SQLPAD_DB_PATH: /var/lib/sqlpad
+      SQLPAD_APP_LOG_LEVEL: info
+      SQLPAD_CONNECTIONS__pg__name: Postgres
+      SQLPAD_CONNECTIONS__pg__driver: postgres
+      SQLPAD_CONNECTIONS__pg__host: db
+      SQLPAD_CONNECTIONS__pg__port: 5432
+      SQLPAD_CONNECTIONS__pg__database: serious_sql
+      SQLPAD_CONNECTIONS__pg__username: postgres
+      SQLPAD_CONNECTIONS__pg__password: postgres
+    volumes:
+      - sqlpad-data:/var/lib/sqlpad
+    # If Apple Silicon gives issues, uncomment the next line:
+    # platform: linux/amd64
+
+volumes:
+  pgdata:
+  sqlpad-data:
