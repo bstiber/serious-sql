@@ -107,5 +107,46 @@ FROM dvd_rentals.sales_by_film_category
 ORDER BY total_sales
 LIMIT 1;
 ```
+# EXERCISES
+### 1: What is the name of the category with the highest category_id in the dvd_rentals.category table?
 
+```SQL
+SELECT 
+  name,
+  category_id
+FROM
+  dvd_rentals.category
+order by category_id DESC
+limit 1; /*or remove the limit to see all 16 in descending order*/
+```
+### 2: For the films with the longest length, what is the title of the “R” rated film with the lowest replacement_cost in dvd_rentals.film table?
 
+```SQL
+SELECT 
+  title, replacement_cost, length, rating
+FROM dvd_rentals.film
+WHERE rating = 'R'
+ORDER BY length DESC, replacement_cost ASC
+LIMIT 10;
+```
+### 3: Who was the manager of the store with the highest total_sales in the dvd_rentals.sales_by_store table?
+
+```SQL
+SELECT 
+  store, 
+  manager, 
+  total_sales
+FROM dvd_rentals.sales_by_store
+ORDER BY total_sales DESC
+Limit 10;
+```
+### 4: What is the postal_code of the city with the 5th highest city_id in the dvd_rentals.address table?
+
+```SQL
+SELECT 
+  city_id,
+  postal_code 
+FROM dvd_rentals.address 
+ORDER BY city_id DESC
+LIMIT 10;
+```
