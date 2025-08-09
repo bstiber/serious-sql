@@ -1,0 +1,111 @@
+# Week 1 notes
+
+## Notes SELECT
+
+Using  SELECT
+
+```sql
+SELECT
+  column_name_1,
+  column_name_2
+FROM schema_name.table_name
+```
+
+✅ No comma after the last column in the SELECT list.
+
+`SELECT` is what you use to choose what `Data` you want to `retrieve` from the `table.` The `specific` section of the table.
+
+## Purpose
+Specifies what columns or column you want to retrieve from a table.
+
+## Important
+SELECT doesn't decide where the data comes from -- that's FROM.
+
+## Row filtering 
+Is handled by using `WHERE`.
+
+`FROM` is used to choose which table (and schema, if needed) the data will come from.
+
+
+# EXAMPLE
+You are in a grocery store, you want to `SELECT`(data) oranges `FROM`(location) the fruit stand, inside the store.
+
+## Wildcard example
+SELECT `*` is used to choose everything from the table. Not a specific item such as all `fruit` not just `oranges`.
+
+```SQL
+SELECT *
+FROM schema_name.table_name;
+```
+
+### Analogy
+SELECT = I want oranges, apples, bananas (Specific `columns`)
+FROM = From the product section (table)
+WHERE = Only if they are ripe (filter rows)
+
+```SQL
+SELECT name, age
+FROM employees
+WHERE department = 'Sales';
+```
+
+# Notes WHERE
+
+WHERE using in SQL
+
+`WHERE` is used for filtering the `FROM` 
+
+## Purpose
+to filter rows in a table based on a condition
+
+## Example
+
+```SQL
+SELECT badge_number
+FROM LA_County
+WHERE department = 'fire_department';
+```
+
+## Analogy
+SELECT = I want oranges (Specific columns)
+FROM = From the produce section (table)
+WHERE = Only if they are ripe (filter rows)
+
+# LIMIT
+
+### Purpose: 
+To `limit` the number of lines displayed on the computer.
+
+### Syntax: 
+LIMIT 10 = means only show 10 lines of text.
+
+### Example: 
+```sql
+SELECT *
+FROM dvd_rentals.actor
+LIMIT 10;
+```
+
+### Analogy: 
+Only show 10 DVD rentals not the whole list of rentals.
+
+### Trap: 
+
+# NEXT TO EXPLAIN
+`ORDER BY`
+`category`
+`desc` - Ascending & Descending
+
+   Which category had the lowest total_sales value according to the sales_by_film_category table? What was the total_sales value?
+
+## Category example
+```sql
+SELECT
+  category,
+  total_sales
+FROM dvd_rentals.sales_by_film_category
+ORDER BY total_sales
+LIMIT 1;
+```
+
+
