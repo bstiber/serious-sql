@@ -150,3 +150,14 @@ FROM dvd_rentals.address
 ORDER BY city_id DESC
 LIMIT 10;
 ```
+# Find the number of records in your dataset
+
+## Using `COUNT`
+
+How many rows are there in the film_list table?
+
+```SQL
+SELECT 
+ COUNT(*) AS row_count /*AS row_count just means the result column will show up labeled as “row_count” instead of whatever default name SQL would give it.*/
+FROM dvd_rentals.film_list;
+```
