@@ -163,3 +163,17 @@ FROM dvd_rentals.film_list;
 ```
 ### Column Aliases
 AS `row_count` (above) just means the result column will show up labeled as “row_count” instead of whatever default name SQL would give it.*/
+
+### Show Unique Column Values
+
+What are the unique values for the rating column in the film table?
+
+Using `DISTINCT`
+
+```SQL
+SELECT DISTINCT
+ rating
+FROM dvd_rentals.film_list;
+```
+
+`DISTINCT` makes SQL only show one of each thing, so you don’t get repeats in your results.
