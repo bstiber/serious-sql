@@ -158,6 +158,8 @@ How many rows are there in the film_list table?
 
 ```SQL
 SELECT 
- COUNT(*) AS row_count /*AS row_count just means the result column will show up labeled as “row_count” instead of whatever default name SQL would give it.*/
+ COUNT(*) AS row_count 
 FROM dvd_rentals.film_list;
 ```
+### Column Aliases
+AS `row_count` (above) just means the result column will show up labeled as “row_count” instead of whatever default name SQL would give it.*/
