@@ -181,3 +181,14 @@ FROM dvd_rentals.film_list;
 ---------------
 # Record Counts & Distinct Values
 
+First we need to determine how many records there are. Otherwise we could run into memory constraints when we run a query.
+
+``` SQL
+SELECT 
+  COUNT (*) AS ROW
+FROM dvd_rentals.film_list
+```
+
+![Description of image](images/using_row_count.png)
+
+> `AS` creates an `alias` to make it more readable.
