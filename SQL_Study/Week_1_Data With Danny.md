@@ -177,3 +177,7 @@ FROM dvd_rentals.film_list;
 ```
 
 `DISTINCT` makes SQL only show one of each thing, so you don’t get repeats in your results.
+
+---------------
+# Record Counts & Distinct Values
+
